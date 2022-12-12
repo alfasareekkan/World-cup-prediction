@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cookieParser from 'cookie-parser'
 import dotenv from "dotenv";
+import userRouter from './routes/userRouter.js'
 
 dotenv.config()
 
@@ -19,6 +20,4 @@ mongoose.connect(process.env.DATABASE).then(() => {
 });
 
 
-app.use("/", (req, res) => {
-    res.render('home')
-})
+app.use(userRouter)
