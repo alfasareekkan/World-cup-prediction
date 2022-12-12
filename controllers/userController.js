@@ -7,9 +7,7 @@ export const userHome = (req, res) => {
 const handleErrors = (err) => {
     let error = { email: "", phoneNumber: "", };
     if (err.message.includes("User validation failed")) {
-        // to take values only form object
         Object.values(err.errors).forEach(({ properties }) => {
-          console.log(properties);
           error[properties.path] = properties.message;
         });
       }
@@ -28,16 +26,13 @@ const handleErrors = (err) => {
   };
 
 export const userPrediction =async (req, res) => {
-    console.log(req.body);
     const { firstName, lastName, email, phoneNumber, teamOne, teamTwo, teamOneScore, teamTwoScore } = req.body
     try {
        const user=await User.create({
             firstName, lastName,email,phoneNumber,teamOne,teamTwo,teamOneScore,teamTwoScore
        })
-        console.log(user);
         res.status(200).json('success')
     } catch (error) {
-        console.log(error);
         const err=handleErrors(error)
         res.status(401).json(err)
     }
