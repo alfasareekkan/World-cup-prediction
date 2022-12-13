@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
     <title>QATAR World-Cup 2022</title>
 </head>
@@ -20,7 +20,7 @@
         <div class="intro-content">
             <h1>QATAR WORLDCUP 2022</h1>
             <p><i class="fab fa-galactic-senate"></i>MAKE YOUR WORLD CUP PREDICTIONS</p>
-            <a href="#">CLICK HERE<i class="fas fa-angle-down"></i></a>
+            <a href="#" id="open-btn">CLICK HERE<i class="fas fa-angle-down"></i></a>
         </div>
     </section>
 
@@ -37,6 +37,37 @@
     <img src="/images/cube-variant-with-shadow.svg" alt="ball" class="cube cube-8">
     <img src="/images/cube-variant-with-shadow.svg" alt="ball" class="cube cube-9">
 
+
+    // Modal
+
+    <div id="modal-container">
+        <div id="modal" class="modal-content">
+            <div class="container">
+                <div class="content">
+                </div>
+                <div class="flap"></div>
+            </div>
+            <div class="container">
+                <div class="content">
+                </div>
+                <div class="flap"></div>
+            </div>
+            <div class="container">
+                <div class="content">
+                </div>
+                <div class="flap"></div>
+            </div>
+            <div class="container">
+                <div class="content">
+                </div>
+                <div class="flap"></div>
+            </div>
+            <div id="close-btn">
+                <span>&times;</span>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.js"></script>
 
@@ -44,9 +75,30 @@
         $(document).ready(function () {
             $('body').ripples({
                 resolution: 512,
-                dropRadius: 20,
-                perturbance: 0.04,
+                dropRadius: 10,
+                perturbance: 0.008,
             });
+        })
+
+        let openBtn = document.getElementById('open-btn');
+        let modalContainer = document.getElementById('modal-container');
+        let closeBtn = document.getElementById('close-btn');
+
+        openBtn.addEventListener('click', function () {
+            modalContainer.style.display = 'block';
+        });
+
+
+        closeBtn.addEventListener('click', function () {
+            modalContainer.style.display = 'none';
+        });
+
+
+        window.addEventListener('click', function (e) {
+
+            if (e.target === modalContainer) {
+                modalContainer.style.display = 'none';
+            }
         })
     </script>
 
