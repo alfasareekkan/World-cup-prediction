@@ -48,6 +48,10 @@ body::after {
 .nav-links {
     display: flex;
 }
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
 .logo {
     flex: 1;

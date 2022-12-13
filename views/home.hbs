@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>QATAR World-Cup 2022</title>
 </head>
 
@@ -72,36 +73,36 @@
                 <h4>PREDICT YOUR SCORE AND WIN THE PRIZE</h4>
             </div>
             <div class="form">
-                <form action="">
+                <form action="" id="userForm">
                     <div>
-                        <select id="Predict" value="Choose" name="cars">
-                            <option class="option" value="Argentina">ARGENTINA</option>
-                            <option class="option" value="Coratia">CROATIA</option>
-                            {{!-- <option class="option" value="France">FRANCE</option>
-                            <option class="option" value="Morocco">MOROCCO</option> --}}
+                        <select id="Predict" name="teamOne">
+                            <option class="option" value="argentina">ARGENTINA</option>
+                            <option class="option" value="croatia">CROATIA</option>
+
                         </select>
-                        <input class="input-data" type="text">
+                        <input class="input-data" type="number" name="teamOneScore">
                         <span class="dummy">-</span>
-                        <input class="input-data" type="text">
-                        <select id="Predict" name="Choode">
-                            {{!-- <option class="option" value="Argentina">ARGENTINA</option>
-                            <option class="option" value="Coratia">CROATIA</option> --}}
-                            <option class="option" value="France">FRANCE</option>
-                            <option class="option" value="Morocco">MOROCCO</option>
+                        <input class="input-data" type="number" name="teamTwoScore">
+                        <select id="Predict" name="teamTwo">
+                            <option class="option" value="france">FRANCE</option>
+                            <option class="option" value="morocco">MOROCCO</option>
                         </select>
                     </div>
                     <div class="details">
                         <div>
-                            <input class="input-details penalty" placeholder="Penalty Score (Optional)" type="text">
+                            <input class="input-details penalty" placeholder="Penalty Score (Optional)" type="text"
+                                name="penalty">
+
+
                         </div>
                         <div>
-                            <input class="input-details" placeholder="Enter Your Name" type="text">
-                            <input class="input-details" placeholder="Contact Number" type="text">
-                            <input class="input-details" placeholder="Batch Number" type="text">
+                            <input class="input-details" placeholder="Enter Your Name" type="text" name="name">
+                            <input class="input-details" placeholder="Contact Number" type="text" name="phoneNumber">
+                            <input class="input-details" placeholder="Batch " type="text" name="batchNumber">
                         </div>
                     </div>
                     <div class="button-sub">
-                        <button class="btn-pre">SUBMIT</button>
+                        <button class="btn-pre" id="submitButton">SUBMIT</button>
                     </div>
                 </form>
             </div>
@@ -110,6 +111,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script>
         $(document).ready(function () {
@@ -139,6 +141,57 @@
             if (e.target === modalContainer) {
                 modalContainer.style.display = 'none';
             }
+        })
+        var submitButton = document.getElementById('submitButton');
+        var userForm = document.getElementById('userForm');
+        submitButton.addEventListener('click', async function (e) {
+            e.preventDefault();
+            var formData = new FormData(userForm);
+            dataToSend = Object.fromEntries(formData);
+
+            await fetch('/user-input', {
+                method: "POST",
+                body: JSON.stringify(dataToSend),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }).then((response) => response.json())
+                .then(async (response) => {
+                    if (response === 'success') {
+                        Toastify({
+                            text: "Your Prediction Has Been Recorded",
+                            duration: 3000,
+                            newWindow: true,
+                            close: true,
+                            gravity: "top", // `top` or `bottom`
+                            position: "center", // `left`, `center` or `right`
+                            stopOnFocus: true, // Prevents dismissing of toast on hover
+                            style: {
+                                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            },
+                            onClick: function () { } // Callback after click
+                        }).showToast();
+                        modalContainer.style.display = 'none';
+
+                    }
+                    if (response.phoneNumber) {
+
+                        Toastify({
+                            text: response.phoneNumber,
+                            className: "info",
+                            close: true,
+                            duration: 3000,
+                            gravity: "top", // `top` or `bottom`
+                            position: "center", // `left`, `center` or `right`
+                            stopOnFocus: true,
+
+
+                            style: {
+                                background: "linear-gradient(to right, #dc143c, #dc143c)",
+                            }
+                        }).showToast();
+                    }
+                })
         })
     </script>
 

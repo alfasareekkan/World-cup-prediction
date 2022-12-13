@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import validator from 'validator'
 import validate from 'mongoose-validator';
 var phoneNumberValidator = [
     validate({
@@ -9,25 +8,14 @@ var phoneNumberValidator = [
     })]
 
 const userSchema = new mongoose.Schema({
-    firstName: {
+    name: {
         type: String,
-        required:[true,"Please enter xfirst name"]
-    },
-    firstName: {
-        type: String,
-        required:[true,"Please enter last name"]
-    },
-    email: {
-        type: String,
-        required: [true,"Please enter an email"],
-        unique: true,
-        lowercase: true,
-        validate: [validator.isEmail,'Please enter a valid email']
+        required:[true,"Please enter your name"]
     },
     phoneNumber: {
         type: String,
         unique: true,
-        required: [true, "Please enter an phone number"],
+        required: [true, "Please enter your phone number"],
         validate:phoneNumberValidator
         
     },
@@ -42,15 +30,23 @@ const userSchema = new mongoose.Schema({
         
     },
     teamOneScore: {
-        type: String,
+        type:Number,
         required:true
         
     },
     teamTwoScore: {
-        type: String,
+        type: Number,
         required:true
         
     },
+    penalty: {
+        type:String
+    },
+    batchNumber: {
+        type:String
+    }
+
+
 }, { timestamps: true })
 
 

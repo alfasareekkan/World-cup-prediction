@@ -13,7 +13,7 @@ const handleErrors = (err) => {
       }
     if (err.code === 11000) {
         if (err.keyPattern.phoneNumber === 1) {
-            error.phoneNumber ="phone number already exists"
+            error.phoneNumber ="Phone Number Already Exists"
         }
         if (err.keyPattern.email === 1) {
 
@@ -26,10 +26,10 @@ const handleErrors = (err) => {
   };
 
 export const userPrediction =async (req, res) => {
-    const { firstName, lastName, email, phoneNumber, teamOne, teamTwo, teamOneScore, teamTwoScore } = req.body
-    try {
+  console.log(req.body);
+  try {
        const user=await User.create({
-            firstName, lastName,email,phoneNumber,teamOne,teamTwo,teamOneScore,teamTwoScore
+            ...req.body
        })
         res.status(200).json('success')
     } catch (error) {
