@@ -6,9 +6,12 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
 }
 
 body {
@@ -16,7 +19,7 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background: url('../images/qatarHome.jpg');
+    background: url('../images/qatarHome1.jpg');
     background-size: cover;
     background-position: top;
 }
@@ -48,10 +51,11 @@ body::after {
 .nav-links {
     display: flex;
 }
+
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
+}
 
 .logo {
     flex: 1;
@@ -136,7 +140,7 @@ input::-webkit-inner-spin-button {
     background: rgba(0, 0, 0, 0.5);
     padding: 0.5rem 2rem;
     margin-top: 1rem;
-    border: 1px solid aqua;
+    border: 1px solid crimson;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
 }
@@ -157,118 +161,7 @@ input::-webkit-inner-spin-button {
 }
 
 .intro-content a:hover {
-    filter: drop-shadow(1px 2px 5px aqua);
-}
-
-@media screen and (max-width: 1000px) {
-    #navbar {
-        display: inline-block;
-        height: 18vh;
-    }
-
-    .logo {
-        justify-content: center;
-        text-align: center;
-        margin: 1rem 0 1rem 1rem;
-    }
-
-    .nav-links {
-        justify-content: center;
-        align-items: center;
-        flex: 2;
-    }
-
-    .nav-links li {
-        padding: 0 1%;
-    }
-
-    /* #intro::before {
-        width: 60%;
-        top: -10%;
-    } */
-
-    .intro-content {
-        top: 20%;
-        left: 0%;
-        width: 100%;
-        text-align: center;
-    }
-
-    .intro-content h1 {
-        width: 80%;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 5rem;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    #navbar {
-        height: 20vh;
-        margin: auto;
-        width: 100%;
-    }
-
-    .nav-links li {
-        width: 25%;
-    }
-
-    .nav-links li a {
-        font-size: 90%;
-        border: 1px solid transparent;
-    }
-
-    .nav-links li a:hover {
-        border: 1px solid #fff;
-    }
-
-    #intro {
-        width: 100%;
-    }
-
-    #intro::before {
-        opacity: 0.3;
-        width: 90%;
-    }
-
-    .intro-content {
-        left: 0%;
-    }
-}
-
-@media screen and (max-width: 690px) {
-    .nav-links li {
-        width: 55%;
-        margin-bottom: 1rem;
-    }
-
-    .nav-links li a {
-        padding: 0 70%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        width: 85%;
-    }
-
-    .intro-content {
-        font-size: 100%;
-        top: 5%;
-        left: 0;
-    }
-
-    .intro-content h1 {
-        font-size: 3rem;
-    }
-
-    #intro::before {
-        opacity: 0.2;
-        width: 100%;
-    }
+    filter: drop-shadow(1px 2px 5px crimson);
 }
 
 .cube {
@@ -410,10 +303,10 @@ input::-webkit-inner-spin-button {
     width: 100%;
     height: 100%;
     z-index: 101;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, .7);
 }
-.modal-content
-{
+
+.modal-content {
     display: flex;
     justify-content: space-between;
 }
@@ -426,7 +319,7 @@ input::-webkit-inner-spin-button {
     width: 15rem;
     overflow: hidden;
     border-radius: 5px;
-    margin-top: 30px;
+    margin-top: 1.9rem;
     cursor: pointer;
     box-shadow: 0 0 10px 1px #000000;
 }
@@ -436,16 +329,19 @@ input::-webkit-inner-spin-button {
     background-position: top;
     background-size: cover;
 }
+
 .container2 {
     background: url('https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blte75053f540b897b0/633f9c44c9b6cc1139bba1e4/WC_Squads_Croatia.jpg?quality=80&format=pjpg&auto=webp&width=1000');
     background-position: top;
     background-size: cover;
 }
+
 .container3 {
     background: url('https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt6b00ff2dadce288f/63799e33db723334f78be243/WC_Squads_France_(1).jpg?quality=80&format=pjpg&auto=webp&width=1000');
     background-position: top;
     background-size: cover;
 }
+
 .container4 {
     background: url('https://cdn.ussoccer.com/-/jssmedia/project/ussf/2022-article-images/mntvsmorocco6122_1500x500.ashx?mw=2560&rev=f4bf6953a70c42139a97ccf4fbb4845b');
     background-position: top;
@@ -504,40 +400,48 @@ input::-webkit-inner-spin-button {
     transform: translatex(-15rem);
 }
 
-.form{
+.form {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-#Predict{
-  width: 150px;
-  height: 41px;
-  border-radius: 10px;
-  background-color:crimson;
-  border: 2px solid crimson;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  display: inline-flex;
-  text-align: center;
+#userForm>div:first-child {
+    display: flex;
+    gap: 1rem;
 }
-.dummy{
+
+#Predict {
+    width: 150px;
+    height: 41px;
+    border-radius: 10px;
+    background-color: crimson;
+    border: 2px solid crimson;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    text-align: center;
+}
+
+.dummy {
     text-align: center;
     font-size: 1.5rem;
-    font-weight: 600; 
+    font-weight: 600;
     color: #fff;
 }
-.button-sub{
+
+.button-sub {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding-top: 20px;
+    margin: -.7rem 0 0 0;
 }
 
-.input-data{
+.input-data {
     width: 80px;
     height: 40px;
     color: #fff;
@@ -545,22 +449,23 @@ input::-webkit-inner-spin-button {
     text-align: center;
     font-size: 1.2rem;
     font-weight: 600;
-    background-color:transparent;
-  border: 2px solid crimson;
+    background-color: transparent;
+    border: 2px solid crimson;
 }
-.btn-pre
-{
 
-width: 100px;
-height: 50px;
-border-radius: 10px;
-color: azure;
-font-size: 1rem;
-font-weight: 600;
-text-align: center;
-background-color: crimson;
+.btn-pre {
+
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    color: azure;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: crimson;
 }
-.btn-pre:hover{
+
+.btn-pre:hover {
     border: 2px solid crimson;
     border-color: rgb(218, 19, 69);
     background-color: transparent;
@@ -569,11 +474,11 @@ background-color: crimson;
 }
 
 .option {
-    background-color:transparent;
-  border: 2px solid crimson;
+    background-color: transparent;
+    border: 2px solid crimson;
 }
 
-.contest{
+.contest {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -581,22 +486,25 @@ background-color: crimson;
     color: #fff;
     font-family: 'Chivo Mono', monospace;
 }
-.contest h1{
+
+.contest h1 {
     font-size: 4.1rem;
     letter-spacing: -.1rem;
 }
-.details
-{
-   padding-top: 30px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 1rem; 
+
+.details {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
-.input-details.penalty{
-   background-color: rgba(11, 11, 11, 0.732);
+
+.input-details.penalty {
+    background-color: rgba(11, 11, 11, 0.732);
 }
-.input-details{
+
+.input-details {
     width: 170px;
     height: 40px;
     color: #fff;
@@ -604,6 +512,291 @@ background-color: crimson;
     text-align: center;
     font-size: .7rem;
     font-weight: 400;
-    background-color:transparent;
-  border: 2px solid crimson;
+    background-color: transparent;
+    border: 2px solid crimson;
+}
+
+@media screen and (max-width: 1000px) {
+    #navbar {
+        display: inline-block;
+        height: 18vh;
+    }
+
+    .logo {
+        justify-content: center;
+        text-align: center;
+        margin: 1rem 0 1rem 1rem;
+    }
+
+    .nav-links {
+        justify-content: center;
+        align-items: center;
+        flex: 2;
+    }
+
+    .nav-links li {
+        padding: 0 1%;
+    }
+
+    /* #intro::before {
+        width: 60%;
+        top: -10%;
+    } */
+
+    .intro-content {
+        top: 20%;
+        left: 0%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .intro-content h1 {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5rem;
+    }
+
+    #modal {
+        width: 40rem;
+        height: 60rem;
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        gap: 1rem;
+    }
+
+    .modal-content {
+        gap: 10px;
+    }
+
+    .container {
+        height: 5rem;
+        width: 7.5rem;
+    }
+
+    .contest {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: .8rem;
+    }
+
+    .contest h1 {
+        font-size: 2.3rem;
+    }
+
+    .contest h4 {
+        font-size: 1.2rem;
+    }
+
+    #userForm{
+        margin-top: 1.5rem;
+    }
+
+    #userForm>div:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    #Predict {
+        width: 18rem;
+        height: 3.2rem;
+        border: 2px solid crimson;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .dummy {
+        font-size: 1.6rem;
+    }
+
+    .input-data {
+        width: 7.7rem;
+        height: 2rem;
+        border-radius: 10px;
+        font-size: 1.2rem;
+    }
+
+    .btn-pre {
+        width: 7rem;
+        height: 3rem;
+        font-size: 1rem;
+        margin-top: 2rem;
+    }
+
+    .details div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .input-details.penalty {
+        background-color: rgba(11, 11, 11, 0.732);
+        margin-bottom: 1rem;
+    }
+
+    .input-details {
+        width: 18rem;
+        height: 3.2rem;
+        font-size: 1.3rem;
+    }
+}   
+
+@media screen and (max-width: 800px) {
+    #navbar {
+        height: 20vh;
+        margin: auto;
+        width: 100%;
+    }
+
+    .nav-links li {
+        width: 25%;
+    }
+
+    .nav-links li a {
+        font-size: 90%;
+        border: 1px solid transparent;
+    }
+
+    .nav-links li a:hover {
+        border: 1px solid #fff;
+    }
+
+    #intro {
+        width: 100%;
+    }
+
+    #intro::before {
+        opacity: 0.3;
+        width: 90%;
+    }
+
+    .intro-content {
+        left: 0%;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .nav-links li {
+        width: 55%;
+        margin-bottom: 1rem;
+    }
+
+    .nav-links li a {
+        padding: 0 70%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 85%;
+    }
+
+    .intro-content {
+        font-size: 100%;
+        top: 5%;
+        left: 0;
+    }
+
+    .intro-content h1 {
+        font-size: 3rem;
+    }
+
+    #intro::before {
+        opacity: 0.2;
+        width: 100%;
+    }
+
+    #modal {
+        width: 20rem;
+        height: 34rem;
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        gap: 1rem;
+    }
+
+    .modal-content {
+        gap: 10px;
+    }
+
+    .container {
+        height: 3rem;
+        width: 4.5rem;
+    }
+
+    .contest {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .contest h1 {
+        font-size: 1.2rem;
+    }
+
+    .contest h4 {
+        font-size: .6rem;
+    }
+
+    #userForm{
+        margin-top: 0;
+    }
+
+    #userForm>div:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        align-items: center;
+    }
+
+    #Predict {
+        width: 11rem;
+        height: 2rem;
+        border: 2px solid crimson;
+        font-size: .65rem;
+        font-weight: 600;
+    }
+
+    .dummy {
+        font-size: 1rem;
+    }
+
+    .input-data {
+        width: 4.3rem;
+        height: 1.5rem;
+        border-radius: 10px;
+        font-size: .8rem;
+    }
+
+    .btn-pre {
+        width: 4rem;
+        height: 2rem;
+        font-size: .6rem;
+        margin-top: 0;
+    }
+
+    .details div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+        align-items: center;
+    }
+
+    .input-details.penalty {
+        background-color: rgba(11, 11, 11, 0.732);
+        margin-bottom: 0;
+    }
+
+    .input-details {
+        width: 11rem;
+        height: 2rem;
+        font-size: .7rem;
+    }
 }

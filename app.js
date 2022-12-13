@@ -14,11 +14,11 @@ app.use(express.urlencoded())
 
 // view engine
 app.set('view engine', 'hbs');
-mongoose.connect(process.env.DATABASE).then(() => {
-  app.listen(process.env.PORT, () =>
+// mongoose.connect(process.env.DATABASE).then(() => {
+  app.listen(5000, () =>
     console.log(`server running on port : ${process.env.PORT}`)
   );
-});
+// });
 
 
 app.use(userRouter)

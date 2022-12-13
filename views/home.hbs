@@ -69,20 +69,22 @@
                 </div>
             </div>
             <div class="contest">
-                <h1>WHO WILL WIN THE RACE !</h1>
-                <h4>PREDICT YOUR SCORE AND WIN THE PRIZE</h4>
+                <h1>WHO WILL BE THE CHAMPIONS !</h1>
+                <h4>PREDICT THE FINALISTS AND THEIR SCORE</h4>
             </div>
             <div class="form">
                 <form action="" id="userForm">
                     <div>
                         <select id="Predict" name="teamOne">
-                            <option class="option" value="argentina">ARGENTINA</option>
                             <option class="option" value="croatia">CROATIA</option>
+                            <option class="option" value="argentina">ARGENTINA</option>
 
                         </select>
-                        <input class="input-data" type="number" name="teamOneScore">
-                        <span class="dummy">-</span>
-                        <input class="input-data" type="number" name="teamTwoScore">
+                        <div class="score">
+                            <input class="input-data" type="number" name="teamOneScore">
+                            <span class="dummy">-</span>
+                            <input class="input-data" type="number" name="teamTwoScore">
+                        </div>
                         <select id="Predict" name="teamTwo">
                             <option class="option" value="france">FRANCE</option>
                             <option class="option" value="morocco">MOROCCO</option>
@@ -102,7 +104,7 @@
                         </div>
                     </div>
                     <div class="button-sub">
-                        <button class="btn-pre" id="submitButton">SUBMIT</button>
+                        <button class="btn-pre" id="submitButton" style="cursor: pointer;">SUBMIT</button>
                     </div>
                 </form>
             </div>
