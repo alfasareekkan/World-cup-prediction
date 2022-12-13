@@ -13,16 +13,18 @@ app.use(express.urlencoded());
 
 // view engine
 app.set("view engine", "hbs");
+mongoose.connect(process.env.DATABASE).then(() => {
+  app.listen(process.env.PORT, () =>
+    console.log(`server running on port : ${process.env.PORT}`)
+  );
+});
 
-// mongoose.connect(process.env.DATABASE).then(() => {
-  app.listen(8000, () => console.log(`server running on port : ${8000}`));
-  // });
-  app.use(userRouter);
-  
-  app.use(function (req, res, next) {
-    res.status(404);
-    if (req.accepts("html")) {
-      res.render("404");
-      return;
-    }
-  });
+app.use(userRouter);
+
+app.use(function (req, res, next) {
+  res.status(404);
+  if (req.accepts("html")) {
+    res.render("404");
+    return;
+  }
+});
