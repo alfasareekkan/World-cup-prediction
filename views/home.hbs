@@ -41,29 +41,69 @@
     // Modal
 
     <div id="modal-container">
-        <div id="modal" class="modal-content">
-            <div class="container">
-                <div class="content">
+        <div id="modal">
+            <div class="modal-content">
+                <div class="container container1">
+                    <div class="content">
+                    </div>
+                    <div class="flap flap1"></div>
                 </div>
-                <div class="flap"></div>
-            </div>
-            <div class="container">
-                <div class="content">
+                <div class="container container2">
+                    <div class="content">
+                    </div>
+                    <div class="flap flap2"></div>
                 </div>
-                <div class="flap"></div>
-            </div>
-            <div class="container">
-                <div class="content">
+                <div class="container container3">
+                    <div class="content">
+                    </div>
+                    <div class="flap flap3"></div>
                 </div>
-                <div class="flap"></div>
-            </div>
-            <div class="container">
-                <div class="content">
+                <div class="container container4">
+                    <div class="content">
+                    </div>
+                    <div class="flap flap4"></div>
                 </div>
-                <div class="flap"></div>
+                <div id="close-btn">
+                    <span>&times;</span>
+                </div>
             </div>
-            <div id="close-btn">
-                <span>&times;</span>
+            <div class="contest">
+                <h1>WHO WILL WIN THE RACE !</h1>
+                <h4>PREDICT YOUR SCORE AND WIN THE PRIZE</h4>
+            </div>
+            <div class="form">
+                <form action="">
+                    <div>
+                        <select id="Predict" value="Choose" name="cars">
+                            <option class="option" value="Argentina">ARGENTINA</option>
+                            <option class="option" value="Coratia">CROATIA</option>
+                            {{!-- <option class="option" value="France">FRANCE</option>
+                            <option class="option" value="Morocco">MOROCCO</option> --}}
+                        </select>
+                        <input class="input-data" type="text">
+                        <span class="dummy">-</span>
+                        <input class="input-data" type="text">
+                        <select id="Predict" name="Choode">
+                            {{!-- <option class="option" value="Argentina">ARGENTINA</option>
+                            <option class="option" value="Coratia">CROATIA</option> --}}
+                            <option class="option" value="France">FRANCE</option>
+                            <option class="option" value="Morocco">MOROCCO</option>
+                        </select>
+                    </div>
+                    <div class="details">
+                        <div>
+                            <input class="input-details penalty" placeholder="Penalty Score (Optional)" type="text">
+                        </div>
+                        <div>
+                            <input class="input-details" placeholder="Enter Your Name" type="text">
+                            <input class="input-details" placeholder="Contact Number" type="text">
+                            <input class="input-details" placeholder="Batch Number" type="text">
+                        </div>
+                    </div>
+                    <div class="button-sub">
+                        <button class="btn-pre">SUBMIT</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

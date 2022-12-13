@@ -6,6 +6,9 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 body {
@@ -355,45 +358,47 @@ body::after {
     animation-delay: 3s;
 }
 
-#modal{
+#modal {
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 80rem;
     height: 40rem;
     padding: 10px 20px;
     border-radius: 10px;
     font-size: 1.5rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 3rem;
     animation: animatemodal .4s;
     box-shadow: 0 0 10px 1px #191919;
 }
-@keyframes animatemodal{
-    0%{
-        top:-300px;
+
+@keyframes animatemodal {
+    0% {
+        top: -300px;
         opacity: 0;
     }
-    100%{
+
+    100% {
         top: -50%;
         opacity: 1;
     }
 }
 
-#close-btn{
+#close-btn {
     font-size: 2rem;
     color: white;
 }
 
-#close-btn > span:hover{
+#close-btn>span:hover {
     color: red;
     cursor: pointer;
 }
 
-#modal-container{
+#modal-container {
     display: none;
     position: fixed;
     top: 0;
@@ -401,25 +406,49 @@ body::after {
     width: 100%;
     height: 100%;
     z-index: 101;
-    background-color: rgba(0,0,0, .6);
+    background-color: rgba(0, 0, 0, .6);
+}
+.modal-content
+{
+    display: flex;
+    justify-content: space-between;
 }
 
-.container  {
+
+.container {
     position: relative;
     align-self: flex-start;
     height: 10rem;
     width: 15rem;
-    background: url('https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt6ae97109c5b6d9e3/63367dae70612220ec4c125e/WC_Squads_Argentina.jpg?quality=80&format=pjpg&auto=webp&width=1000');
-    background-position: top;
-    background-size: cover;
     overflow: hidden;
     border-radius: 5px;
     margin-top: 30px;
     cursor: pointer;
     box-shadow: 0 0 10px 1px #000000;
-  }
-  
-  .content {
+}
+
+.container1 {
+    background: url('https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt6ae97109c5b6d9e3/63367dae70612220ec4c125e/WC_Squads_Argentina.jpg?quality=80&format=pjpg&auto=webp&width=1000');
+    background-position: top;
+    background-size: cover;
+}
+.container2 {
+    background: url('https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blte75053f540b897b0/633f9c44c9b6cc1139bba1e4/WC_Squads_Croatia.jpg?quality=80&format=pjpg&auto=webp&width=1000');
+    background-position: top;
+    background-size: cover;
+}
+.container3 {
+    background: url('https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt6b00ff2dadce288f/63799e33db723334f78be243/WC_Squads_France_(1).jpg?quality=80&format=pjpg&auto=webp&width=1000');
+    background-position: top;
+    background-size: cover;
+}
+.container4 {
+    background: url('https://cdn.ussoccer.com/-/jssmedia/project/ussf/2022-article-images/mntvsmorocco6122_1500x500.ashx?mw=2560&rev=f4bf6953a70c42139a97ccf4fbb4845b');
+    background-position: top;
+    background-size: cover;
+}
+
+.content {
     position: absolute;
     top: 50%;
     transform: translatey(-50%);
@@ -427,24 +456,150 @@ body::after {
     color: black;
     padding: 40px;
     font-family: 'Merriweather', serif;
-  }
-  
-  .flap {
+}
+
+.flap {
     width: 100%;
     height: 100%;
-  }
-  
-  .flap::before {
+}
+
+.flap::before {
     position: absolute;
     content: "";
     height: 100%;
     width: 100%;
+    transition: 1s;
+}
+
+.flap1::before {
     background: url('https://media.istockphoto.com/id/472331743/vector/flag-of-argentina.jpg?s=612x612&w=0&k=20&c=c-2umpttsZxhGYUZ-GivXJp367HuWvO7I_aSapJbAOM=');
     background-position: top;
     background-size: cover;
-    transition: 1s;
-  }
-  
-  .container:hover .flap::before{
+}
+
+.flap2::before {
+    background: url('https://cdn.pixabay.com/photo/2012/04/10/23/11/croatia-26888_960_720.png');
+    background-position: top;
+    background-size: cover;
+}
+
+.flap3::before {
+    background: url('https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg');
+    background-position: top;
+    background-size: cover;
+}
+
+.flap4::before {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/383px-Flag_of_Morocco.svg.png');
+    background-position: top;
+    background-size: cover;
+}
+
+
+.container:hover .flap::before {
     transform: translatex(-15rem);
-  }
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#Predict{
+  width: 150px;
+  height: 41px;
+  border-radius: 10px;
+  background-color:crimson;
+  border: 2px solid crimson;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-flex;
+  text-align: center;
+}
+.dummy{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600; 
+    color: #fff;
+}
+.button-sub{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.input-data{
+    width: 80px;
+    height: 40px;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color:transparent;
+  border: 2px solid crimson;
+}
+.btn-pre
+{
+
+width: 100px;
+height: 50px;
+border-radius: 10px;
+color: azure;
+font-size: 1rem;
+font-weight: 600;
+text-align: center;
+background-color: crimson;
+}
+.btn-pre:hover{
+    border: 2px solid crimson;
+    border-color: rgb(218, 19, 69);
+    background-color: transparent;
+    color: #fff;
+    font-weight: 700;
+}
+
+.option {
+    background-color:transparent;
+  border: 2px solid crimson;
+}
+
+.contest{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Chivo Mono', monospace;
+}
+.contest h1{
+    font-size: 4.1rem;
+    letter-spacing: -.1rem;
+}
+.details
+{
+   padding-top: 30px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem; 
+}
+.input-details.penalty{
+   background-color: rgba(11, 11, 11, 0.732);
+}
+.input-details{
+    width: 170px;
+    height: 40px;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    font-size: .7rem;
+    font-weight: 400;
+    background-color:transparent;
+  border: 2px solid crimson;
+}
