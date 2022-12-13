@@ -11,11 +11,11 @@ var phoneNumberValidator = [
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required:[true,"Please enter an first name"]
+        required:[true,"Please enter xfirst name"]
     },
     firstName: {
         type: String,
-        required:[true,"Please enter an first last name"]
+        required:[true,"Please enter last name"]
     },
     email: {
         type: String,
