@@ -5,6 +5,6 @@ import {
 } from '../controllers/userController.js'
 
 router.get('/', userHome)
-router.post('/user-input',userPrediction)
+// router.post('/user-input',userPrediction)
 
 export default router

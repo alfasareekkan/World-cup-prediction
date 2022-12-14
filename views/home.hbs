@@ -146,8 +146,22 @@
         var submitButton = document.getElementById('submitButton');
         var userForm = document.getElementById('userForm');
         submitButton.addEventListener('click', async function (e) {
-            e.preventDefault();
-            var formData = new FormData(userForm);
+             e.preventDefault();
+            Toastify({
+                            text: "Prediction closed",
+                            className: "info",
+                            close: true,
+                            duration: 3000,
+                            gravity: "top", // `top` or `bottom`
+                            position: "center", // `left`, `center` or `right`
+                            stopOnFocus: true,
+
+
+                            style: {
+                                background: "linear-gradient(to right, #dc143c, #dc143c)",
+                            }
+                        }).showToast();
+            /*-- var formData = new FormData(userForm);
             dataToSend = Object.fromEntries(formData);
 
             await fetch('/user-input', {
@@ -192,7 +206,7 @@
                             }
                         }).showToast();
                     }
-                })
+                }) */
         })
     </script>
  <div class="github">

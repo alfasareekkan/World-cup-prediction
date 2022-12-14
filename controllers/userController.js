@@ -33,7 +33,8 @@ export const userPrediction =async (req, res) => {
        })
         res.status(200).json('success')
     } catch (error) {
-        const err=handleErrors(error)
+    const err = handleErrors(error)
+    console.log(err);
         res.status(401).json(err)
     }
 
