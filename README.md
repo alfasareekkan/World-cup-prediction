@@ -47,9 +47,6 @@ This is a 2022 Qatar World Cup final score prediction contest website using Node
 ![CSS3](https://img.shields.io/badge/CSS%20-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 
-  
-
-
 <br>
 
 
