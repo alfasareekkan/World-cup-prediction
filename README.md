@@ -7,13 +7,13 @@
   <p align="center">
     This is a 2022 Qatar World Cup final prediction contest website using Node js.
     <br />
-    <a href="https://github.com/Jauharmuhammed/World-cup-prediction"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/alfasareekkan/World-cup-prediction"><strong>Explore the docs »</strong></a>
     <br />
     <a href="https://prediction.codestreak.in/">View Site</a>
     ·
-    <a href="https://github.com/Jauharmuhammed/World-cup-predictionissues">Report Bug</a>
+    <a href="https://github.com/alfasareekkan/World-cup-prediction/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Jauharmuhammed/World-cup-prediction/issues">Request Feature</a>
+    <a href="https://github.com/alfasareekkan/World-cup-prediction/issues">Request Feature</a>
   </p>
 </div>
 
@@ -22,7 +22,7 @@
 ## About The Project
 <br>
 <p align='center'>
-<img src="https://github.com/Jauharmuhammed/World-cup-prediction/blob/main/public/assets/banner.png" width='70%' >
+<img src="https://github.com/alfasareekkan/World-cup-prediction/blob/main/public/assets/banner.png" width='70%' >
 </p>
 <br>
 
